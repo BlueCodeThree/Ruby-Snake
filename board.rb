@@ -1,6 +1,7 @@
 class Board
-    attr_accessor :board
+    attr_accessor :board, :score
     def initialize
+        @score = 0
         @board = []
         @board[0] = ["-","-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-","-" ]
         @board[1] = ["|"," ", " ", " ", " ", " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "|" ]
@@ -29,5 +30,6 @@ class Board
     def display
         puts "\e[2J\e[f"
         puts @board.map { |x| x.join(' ') }
+        puts "Score: #{@score}"
     end
 end

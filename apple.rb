@@ -13,7 +13,13 @@ class Apple
     end
 
     def display(board)
-        # check first that the space is == " "
-        board.board[random_x][random_y] = @apple
+        # checks first that the space is == " "
+        this_x = random_x
+        this_y = random_y
+        if board.board[this_x][this_y] == " "
+            board.board[this_x][this_y] = @apple
+        else
+            display(board)
+        end 
     end
 end

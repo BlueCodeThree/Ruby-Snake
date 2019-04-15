@@ -37,9 +37,9 @@ class Snake
 
         # what happens if it is an apple
         elsif left == "🍎"
-        # plus in the score
-        increase_length # make snake longer
-        @y += -1 # change the snake head position
+        board.score += 10    # plus in the score
+        increase_length     # make snake longer
+        @y += -1    # change the snake head position
         unshift
         print_body(board)
         apple.display(board) # change the location of the apple
@@ -62,7 +62,7 @@ class Snake
 
         # what happens if it is an apple
         elsif right == "🍎"
-            # plus in the score
+            board.score += 10
             increase_length
             @y += 1 # change the snake head position
             unshift
@@ -87,7 +87,7 @@ class Snake
 
         # what happens if it is an apple
         elsif up == "🍎"
-            # plus in the score
+            board.score += 10
             increase_length
             @x += -1 # change the snake head position
             unshift
@@ -112,7 +112,7 @@ class Snake
 
         # what happens if it is an apple
         elsif down == "🍎"
-            # plus in the score
+            board.score += 10
             increase_length
             @x += 1 # change the snake head position
             unshift

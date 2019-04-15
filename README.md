@@ -8,3 +8,7 @@ Use you `wasd` keys to move the snake around the board.
 (`,aoe` works too for Dvorak peeps 😉)
 
 🍎 Your aim is to eat the apples. As you eat the apples, your body grows bigger. Don't run into yourself or the walls, or it's game over.
+
+## To Start the Game
+
+In terminal ▶️ `ruby main.rb` 
