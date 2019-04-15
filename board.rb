@@ -27,7 +27,7 @@ class Board
     end
 
     def display
-        # puts "\e[2J\e[f"
+        puts "\e[2J\e[f"
         puts @board.map { |x| x.join(' ') }
     end
 end
