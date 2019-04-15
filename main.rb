@@ -6,9 +6,9 @@
 # -----------------------------------------------------------------------
 
 require 'io/console'
-require_relative 'board'
-require_relative 'snake'
-require_relative 'apple'
+require_relative 'classes/board'
+require_relative 'classes/snake'
+require_relative 'classes/apple'
 
 FPS = 30
 
