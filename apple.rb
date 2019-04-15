@@ -13,6 +13,7 @@ class Apple
     end
 
     def display(board)
+        # check first that the space is == " "
         board.board[random_x][random_y] = @apple
     end
 end

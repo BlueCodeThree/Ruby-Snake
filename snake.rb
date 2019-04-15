@@ -38,7 +38,7 @@ class Snake
         # what happens if it is an apple
         elsif left == "🍎"
         # plus in the score
-        @length += 1 # make the apple longer
+        increase_length # make snake longer
         @y += -1 # change the snake head position
         unshift
         print_body(board)
@@ -46,13 +46,14 @@ class Snake
         end
     end
 
-    def move_right(board)
+    def move_right(board, apple)
+        right = board.board[@x][@y+1]
         # checks if there is a wall
-        if board.board[@x][@y+1] == "|"
+        if right == "|"
             # you will DIEEEEEEEe
 
         # if no wall, moves to the right
-        elsif board.board[@x][@y+1] == " "
+        elsif right == " "
             board.board[@x][@y] = " "
             @y += 1 
             unshift
@@ -60,17 +61,24 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        # plus in the score...
+        elsif right == "🍎"
+            # plus in the score
+            increase_length
+            @y += 1 # change the snake head position
+            unshift
+            print_body(board)
+            apple.display(board) # change the location of the apple
         end
     end
 
-    def move_up(board)
+    def move_up(board, apple)
+        up = board.board[@x-1][@y]
         # checks if there is a wall
-        if board.board[@x-1][@y] == "-"
+        if up == "-"
             # DIE
 
         # if no wall, moves up
-        elsif board.board[@x-1][@y] == " "
+        elsif up == " "
             board.board[@x][@y] = " "
             @x += -1 
             unshift
@@ -78,17 +86,24 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        # plus in the score...
+        elsif up == "🍎"
+            # plus in the score
+            increase_length
+            @x += -1 # change the snake head position
+            unshift
+            print_body(board)
+            apple.display(board) # change the location of the apple
         end
     end
 
-    def move_down(board)
+    def move_down(board, apple)
+        down = board.board[@x+1][@y]
         # checks if there is a wall
-        if board.board[@x+1][@y] == "-"
+        if down == "-"
             # DIE!!!!!
 
         # if no wall, moves up
-        elsif board.board[@x+1][@y] == " "
+        elsif down == " "
             board.board[@x][@y] = " "
             @x += 1 
             unshift
@@ -96,7 +111,13 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        # plus in the score...
+        elsif down == "🍎"
+            # plus in the score
+            increase_length
+            @x += 1 # change the snake head position
+            unshift
+            print_body(board)
+            apple.display(board) # change the location of the apple
         end
     end
 
@@ -118,5 +139,9 @@ class Snake
         body_end_y = @body_path[1 + @length][1]
         board.board[body_end_x][body_end_y] = " "
         @body_path.pop
+    end
+
+    def increase_length
+        @length += 1
     end
 end

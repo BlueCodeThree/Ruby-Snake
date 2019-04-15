@@ -25,11 +25,11 @@ while true
     when "a"
         snake.move_left(board, apple)
     when "e", "d"
-        snake.move_right(board)
+        snake.move_right(board, apple)
     when ",", "w"
-        snake.move_up(board)
+        snake.move_up(board, apple)
     when "o", "s"
-        snake.move_down(board)
+        snake.move_down(board, apple)
     else
         return
     end
