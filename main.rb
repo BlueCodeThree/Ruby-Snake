@@ -30,7 +30,9 @@ while true
         snake.move_up(board, apple)
     when "o", "s"
         snake.move_down(board, apple)
-    else
+    when "q"
         return
+    else
+        
     end
 end

@@ -4,8 +4,8 @@ class Snake
         @x = 10
         @y = 14
         @length = 2
-        @snake = "\u229F".encode('utf-8')
-        @body = "\u2584".encode('utf-8')
+        @snake = "😀" #"\u229F".encode('utf-8')
+        @body = "⏹️" # "\u2584".encode('utf-8')
         @body_path = [[10, 14], [10, 14], [10, 15]]
 
     end
@@ -36,7 +36,7 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        elsif left == "🍎"
+        elsif left == apple.current_food
         board.score += 10    # plus in the score
         increase_length     # make snake longer
         @y += -1    # change the snake head position
@@ -61,7 +61,7 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        elsif right == "🍎"
+        elsif right == apple.current_food
             board.score += 10
             increase_length
             @y += 1 # change the snake head position
@@ -86,7 +86,7 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        elsif up == "🍎"
+        elsif up == apple.current_food
             board.score += 10
             increase_length
             @x += -1 # change the snake head position
@@ -111,7 +111,7 @@ class Snake
             body_end(board)
 
         # what happens if it is an apple
-        elsif down == "🍎"
+        elsif down == apple.current_food
             board.score += 10
             increase_length
             @x += 1 # change the snake head position

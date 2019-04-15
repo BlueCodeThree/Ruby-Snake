@@ -31,5 +31,7 @@ class Board
         puts "\e[2J\e[f"
         puts @board.map { |x| x.join(' ') }
         puts "Score: #{@score}"
+        puts
+        puts "Press 'q' to quit"
     end
 end
