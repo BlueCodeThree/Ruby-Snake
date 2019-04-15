@@ -8,19 +8,22 @@
 require 'io/console'
 require_relative 'board'
 require_relative 'snake'
+require_relative 'apple'
 
 FPS = 30
 
 board = Board.new
 snake = Snake.new
+apple = Apple.new
 
+apple.display(board)
 while true
 #     start = Time.now
     snake.display(board)
 #     sleep(start + FPS - Time.now)
     case $stdin.getch
     when "a"
-        snake.move_left(board)
+        snake.move_left(board, apple)
     when "e", "d"
         snake.move_right(board)
     when ",", "w"
