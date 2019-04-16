@@ -18,9 +18,9 @@ apple = Apple.new
 
 apple.display(board)
 while true
-#     start = Time.now
+#    start = Time.now
     snake.display(board)
-#     sleep(start + FPS - Time.now)
+#    sleep(start + FPS - Time.now)
     case $stdin.getch
     when "a"
         snake.move_left(board, apple)

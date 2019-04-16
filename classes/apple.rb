@@ -14,6 +14,9 @@ class Apple
         rand(1..29)
     end
 
+    # I need to work on this - It could be more succinct
+    # I think this isn't quite generating the food the way I want it to. Unsure of the exact bug. 
+    # Sometimes it is not spawning a food - I can't replicate. I suspect it has something to do with the tail?
     def display(board)
         # checks first that the space is == " "
         this_x = random_x
