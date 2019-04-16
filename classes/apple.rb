@@ -24,8 +24,6 @@ class Apple
                 @copy = @apple
             end
         else
-            display(board)
-            p @copy
         end 
     end
 

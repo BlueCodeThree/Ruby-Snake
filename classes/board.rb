@@ -34,4 +34,8 @@ class Board
         puts
         puts "Press 'q' to quit"
     end
+
+    def plus_score
+        @score += 10
+    end
 end

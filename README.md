@@ -4,7 +4,7 @@
 
 🐍 Classic snake game
 
-![snake game](img/2019-04-15-snake.jpg "Classic Snake Game - now in your ruby terminal")
+![snake game](img/2019-04-16-snake.gif "Classic Snake Game - now in your ruby terminal")
 
 Use you `wasd` keys to move the snake around the board.
 (`,aoe` works too for Dvorak peeps 😉)

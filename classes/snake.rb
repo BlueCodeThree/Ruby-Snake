@@ -11,8 +11,6 @@ class Snake
     end
 
     def display(board)
-        # @body = @body * @length
-        # current_position = board.board[@x][@y]
         board.board[@x][@y] = @snake
         board.display
     end
@@ -37,7 +35,7 @@ class Snake
 
         # what happens if it is an apple
         elsif left == apple.current_food
-        board.score += 10    # plus in the score
+        board.plus_score    # plus in the score
         increase_length     # make snake longer
         @y += -1    # change the snake head position
         unshift
@@ -62,7 +60,7 @@ class Snake
 
         # what happens if it is an apple
         elsif right == apple.current_food
-            board.score += 10
+            board.plus_score
             increase_length
             @y += 1 # change the snake head position
             unshift
@@ -87,7 +85,7 @@ class Snake
 
         # what happens if it is an apple
         elsif up == apple.current_food
-            board.score += 10
+            board.plus_score
             increase_length
             @x += -1 # change the snake head position
             unshift
@@ -112,12 +110,8 @@ class Snake
 
         # what happens if it is an apple
         elsif down == apple.current_food
-            board.score += 10
-            increase_length
             @x += 1 # change the snake head position
-            unshift
-            print_body(board)
-            apple.display(board) # change the location of the apple
+            get_apple(board, apple)
         end
     end
 
@@ -143,5 +137,13 @@ class Snake
 
     def increase_length
         @length += 1
+    end
+
+    def get_apple(board, apple)
+        board.plus_score
+        increase_length
+        unshift
+        print_body(board)
+        apple.display(board) # change the location of the apple
     end
 end
